@@ -1,3 +1,5 @@
+
+
 var player = {
 	powers: [],
 	init: function(songs, name) { 
@@ -35,11 +37,11 @@ $(document).ready(function() {
 		name = $("#name").val();
 		if (name != ""){
 			console.log("here");
-			$("#add-name").animate({width:"hide"});
-			$("#add-songs").animate({width:"show"});
-			
+			$("#add-name").fadeOut("slow");
+			$("#add-songs").animate({width:"show"}).find("h2").text(name);
 		}
 	});
+
 	$("button#upload").on("click", function() { 
 		player.init(songs,name);
 		$("#songupload").trigger("click");

@@ -13,6 +13,8 @@
 	@include box-sizing(border-box);
 }
 
+.hidden { display: none; }
+
 body { 
 	font-size: 14px;
 	background: url("../images/black-linen.png");
@@ -49,10 +51,51 @@ h1 {
 	}
 }
 
+h2 {
+	font-size: 3em;
+	margin: 10px;
+	text-align: center;
+}
+
+.ui-battle, .ui-dialog {
+	position: absolute;
+	bottom: 0;
+	left: 40%;
+	width: 400px;
+	height: 150px;
+	background: #f9f9f9;
+	z-index: 10000;
+	@include border-radius(3px 3px 0 0);
+	display: block;
+	overflow: visible;
+
+	li {
+		font-family: sans-serif;
+		text-align: center;
+		padding: 10px;
+		font-size: 1.2em;
+		list-style: none;
+		display: block;
+		border-top: 1px solid #fff;
+
+	}
+}
+
+.ui-battle:after { 
+
+	content: "POWERS";
+	position: absolute;
+	color: #fff;
+	font-size: 3em;
+	top: -.85em;
+	font-family: sans-serif;
+	text-align: center;
+
+}
+
 #game-wrap { 
-
 	display: none;
-
+	position: relative;
 }
 
 #entry-box { 
@@ -61,7 +104,7 @@ h1 {
 	width: 600px;
 	min-height: 300px;
 	left: 50%;
-	top: 50%;
+	top: 40%;
 	margin-top: -150px;
 	margin-left: -300px;
 	background: #fff;
@@ -69,6 +112,8 @@ h1 {
 	-moz-animation: bounce 1.4s alternate infinite;
 	animation: bounce 1.4s alternate infinite;
 	overflow: hidden;
+	display: none;
+	display: block;
 	padding: 30px 10px;
 	background: url("../images/accent.png") 0px 10px repeat-x , url("../images/accent.png") 0px 98% repeat-x #fff;
 
@@ -132,21 +177,29 @@ button {
 	}
 }
 
+.attack { cursor: pointer; }
+
 #add-name { 
 	overflow: hidden;
 }
 #add-songs { display: none; }
 
+.damage {
+
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+
 canvas { 
-	width: 600px;
-	height: 600px;
 	border: 1px solid #ccc;
+	border-top-color: #f9f9f9;
+	border-bottom-color: #aaa;
 	display: block;
 	margin: 0 auto;
-	background: #ccc;
+	background: url("../images/stone.jpg");
 	@include box-shadow(0px 5px 10px #000);
 	position: relative;
-	@include opacity(.99);
 }
 
 #powers {

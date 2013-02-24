@@ -9,12 +9,8 @@
     <script src="fupload/js/vendor/jquery.ui.widget.js"></script>
     <script src="fupload/js/jquery.iframe-transport.js"></script>
     <script src="fupload/js/jquery.fileupload.js"></script>
-    <!--<script type="text/javascript" src='echonest_js/dependencies.js'></script>-->
     <script type="text/javascript" src='echonest_js/echo.js'></script>
     <script type="text/javascript" src='echonest_js/fupload.js'></script>
-    <script src="engine_js/enchant.js"></script>
-    <script src="engine_js/game.js"></script>
-
   </head>
   <body>
       <div id='entry-box'>  
@@ -28,21 +24,23 @@
           <button id='next'>Begin Marauding</button>
         </div>
         <div id='add-songs'>
+          <h2></h2>
           <p>Music Marauder (TM R PATENT PENDING ALL RIGHTS RESERVED 1900-present) 
             is a 2-dimensional action-adventure game based on the EchoNest API. As a 
             player, your goal is to save the world by using your songs to defeat the foul
             musicia- ahem, monsters, that inhabit it. Your success will depend on the songs you choose
-            as your powers.</p>
+            as your powers. Yoiur first song is your theme song, and it defines your character.</p>
 
           <input id="songupload" style='display: none;' type="file" name="files[]" data-url="fupload/server/php/" multiple>
           <button id='upload'>Upload a Song</button>
           <ul id="powers">
           </ul>
+          <button id='finalize' class='hidden'>Go forth, child of Cthulu</button>
         </div>
       </div>
       <div id='game-wrap'>
         <h1>Music Marauder</h1>
-  	    <canvas id='echoWorld'><canvas>
+  	    <canvas id='echoWorld' width='600' height='600'><canvas>
       </div>
   </body>
 </html>
