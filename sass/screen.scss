@@ -4,3 +4,189 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+
+* {
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+}
+
+body { 
+	font-size: 14px;
+	background: url("../subtle/black-linen.png");
+	padding-bottom: 50px;
+}
+
+h1 { 
+
+	font-family: 'Quintessential', cursive;
+	text-align: center;
+	font-size: 5em;
+	margin: 20px auto -20px;
+	background: url("../scroll.png") no-repeat;
+	width: 800px;
+	height: 179px;
+	line-height: 165px;
+	text-shadow: 0px 1px 0px #fff;
+	position: relative;
+
+	&:after, &:before {
+
+		content: "";
+		position: absolute;
+		top: 160px;
+		display: block;
+		background: url("../pillar.png") no-repeat;
+		width: 100px;
+		height: 600px;
+	}
+
+	&:after {
+		right: 0;
+		background-position: top right;
+	}
+}
+
+#game-wrap { 
+
+	display: none;
+
+}
+
+#entry-box { 
+
+	position: fixed;
+	width: 600px;
+	height: 300px;
+	left: 50%;
+	top: 50%;
+	margin-top: -150px;
+	margin-left: -300px;
+	background: #fff;
+	-webkit-animation: bounce 1.4s alternate infinite;
+
+	input { 
+
+		display: block;
+		width: 90%;
+		margin: 10px auto;
+		border: none;
+		outline: none;
+		height: 30px;
+		line-height: 30px;
+		padding: 6px;
+		font-size: 1.4em;
+		border: 1px solid #ccc;
+		@include transition(all .2s ease-in-out);
+		@include border-radius(2px);
+
+		&:focus {
+			border-color: #bbb;
+		}
+	}
+}
+
+p {
+
+	line-height: 1.8;
+	padding: 18px;
+	font-size: 1.2em;
+	font-family: sans-serif;
+}
+
+button { 
+
+	display: block;
+	width: 50%;
+	@include border-radius(3px);
+	margin: 10px auto;
+	border: 1px solid #aaa;
+	border-top-color: #ccc;
+	outline: none;
+	padding: 6px;
+	font-family: 'Open Sans', sans-serif;
+	background: rgb(226,203,167); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(226,203,167,1) 0%, rgba(182,141,76,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,203,167,1)), color-stop(100%,rgba(182,141,76,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(226,203,167,1) 0%,rgba(182,141,76,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(226,203,167,1) 0%,rgba(182,141,76,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(226,203,167,1) 0%,rgba(182,141,76,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(226,203,167,1) 0%,rgba(182,141,76,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2cba7', endColorstr='#b68d4c',GradientType=0 ); /* IE6-9 */
+	cursor: pointer;
+	font-size: 1.6em;
+	text-shadow: 0px 1px 0px #e1e1e1;
+
+	&:hover {
+
+		background: #C1965D;
+
+	}
+
+}
+
+canvas { 
+	width: 600px;
+	height: 600px;
+	border: 1px solid #ccc;
+	display: block;
+	margin: 0 auto;
+	background: #ccc;
+	@include box-shadow(0px 5px 10px #000);
+	position: relative;
+	@include opacity(.99);
+
+	&:after {
+
+		content: "hrth";
+		position: absolute;
+		top: 100px;
+		left: 100px;
+		display: block;
+	}
+}
+
+@-webkit-keyframes bounce{
+
+	from {
+
+		margin-top: -150px;
+	}
+	to {
+
+		margin-top: -130px;
+	}
+
+}
+@-moz-keyframes bounce{
+	from {
+
+		margin-top: -150px;
+	}
+	to {
+
+		margin-top: -130px;
+	}
+}
+@-o-keyframes bounce{
+	from {
+
+		margin-top: -150px;
+	}
+	to {
+
+		margin-top: -130px;
+	}
+}
+@keyframes bounce{
+	from {
+
+		margin-top: -150px;
+	}
+	to {
+
+		margin-top: -130px;
+	}
+}

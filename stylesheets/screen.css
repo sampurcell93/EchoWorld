@@ -66,3 +66,212 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
+
+/* line 10, ../sass/screen.scss */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 16, ../sass/screen.scss */
+body {
+  font-size: 14px;
+  background: url("../subtle/black-linen.png");
+  padding-bottom: 50px;
+}
+
+/* line 22, ../sass/screen.scss */
+h1 {
+  font-family: 'Quintessential', cursive;
+  text-align: center;
+  font-size: 5em;
+  margin: 20px auto -20px;
+  background: url("../scroll.png") no-repeat;
+  width: 800px;
+  height: 179px;
+  line-height: 165px;
+  text-shadow: 0px 1px 0px #fff;
+  position: relative;
+}
+/* line 35, ../sass/screen.scss */
+h1:after, h1:before {
+  content: "";
+  position: absolute;
+  top: 160px;
+  display: block;
+  background: url("../pillar.png") no-repeat;
+  width: 100px;
+  height: 600px;
+}
+/* line 46, ../sass/screen.scss */
+h1:after {
+  right: 0;
+  background-position: top right;
+}
+
+/* line 52, ../sass/screen.scss */
+#game-wrap {
+  display: none;
+}
+
+/* line 58, ../sass/screen.scss */
+#entry-box {
+  position: fixed;
+  width: 600px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  margin-top: -150px;
+  margin-left: -300px;
+  background: #fff;
+  -webkit-animation: bounce 1.4s alternate infinite;
+}
+/* line 70, ../sass/screen.scss */
+#entry-box input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  border: none;
+  outline: none;
+  height: 30px;
+  line-height: 30px;
+  padding: 6px;
+  font-size: 1.4em;
+  border: 1px solid #ccc;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 85, ../sass/screen.scss */
+#entry-box input:focus {
+  border-color: #bbb;
+}
+
+/* line 91, ../sass/screen.scss */
+p {
+  line-height: 1.8;
+  padding: 18px;
+  font-size: 1.2em;
+  font-family: sans-serif;
+}
+
+/* line 99, ../sass/screen.scss */
+button {
+  display: block;
+  width: 50%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  margin: 10px auto;
+  border: 1px solid #aaa;
+  border-top-color: #ccc;
+  outline: none;
+  padding: 6px;
+  font-family: 'Open Sans', sans-serif;
+  background: #e2cba7;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #e2cba7 0%, #b68d4c 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e2cba7), color-stop(100%, #b68d4c));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e2cba7 0%, #b68d4c 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e2cba7 0%, #b68d4c 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e2cba7 0%, #b68d4c 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #e2cba7 0%, #b68d4c 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2cba7', endColorstr='#b68d4c',GradientType=0 );
+  /* IE6-9 */
+  cursor: pointer;
+  font-size: 1.6em;
+  text-shadow: 0px 1px 0px #e1e1e1;
+}
+/* line 122, ../sass/screen.scss */
+button:hover {
+  background: #C1965D;
+}
+
+/* line 130, ../sass/screen.scss */
+canvas {
+  width: 600px;
+  height: 600px;
+  border: 1px solid #ccc;
+  display: block;
+  margin: 0 auto;
+  background: #ccc;
+  -webkit-box-shadow: 0px 5px 10px black;
+  -moz-box-shadow: 0px 5px 10px black;
+  box-shadow: 0px 5px 10px black;
+  position: relative;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=99);
+  opacity: 0.99;
+}
+/* line 141, ../sass/screen.scss */
+canvas:after {
+  content: "hrth";
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  display: block;
+}
+
+@-webkit-keyframes bounce {
+  /* line 153, ../sass/screen.scss */
+  from {
+    margin-top: -150px;
+  }
+
+  /* line 157, ../sass/screen.scss */
+  to {
+    margin-top: -130px;
+  }
+}
+
+@-moz-keyframes bounce {
+  /* line 164, ../sass/screen.scss */
+  from {
+    margin-top: -150px;
+  }
+
+  /* line 168, ../sass/screen.scss */
+  to {
+    margin-top: -130px;
+  }
+}
+
+@-o-keyframes bounce {
+  /* line 174, ../sass/screen.scss */
+  from {
+    margin-top: -150px;
+  }
+
+  /* line 178, ../sass/screen.scss */
+  to {
+    margin-top: -130px;
+  }
+}
+
+@keyframes bounce {
+  /* line 184, ../sass/screen.scss */
+  from {
+    margin-top: -150px;
+  }
+
+  /* line 188, ../sass/screen.scss */
+  to {
+    margin-top: -130px;
+  }
+}
