@@ -12,6 +12,9 @@
     <!--<script type="text/javascript" src='echonest_js/dependencies.js'></script>-->
     <script type="text/javascript" src='echonest_js/echo.js'></script>
     <script type="text/javascript" src='echonest_js/fupload.js'></script>
+    <script src="engine_js/enchant.js"></script>
+    <script src="engine_js/game.js"></script>
+
   </head>
   <body>
       <div id='entry-box'>  
