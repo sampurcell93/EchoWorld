@@ -210,13 +210,13 @@ var board = {
 			 {name: "./Larger Than Life.mp3", damage: 30}], 
 			 name: "Whackstreet Boy", x: 0, dialog: "I'm gonna make you pay!", health: 100, initiative: '.2'},
 		{name: "Christina Gaggalera", x: 170, dialog: "Break a nail and DIE.", health: 170, initiative: '.1',
-		songs: [{name:'./What A Girl Wants.mp3',damage: 80}, {name:'./Your Body.mp3',damage: 40}, {name:'./Genie In A Bottle.mp3', damage: 60]
+		songs: [{name:'./What A Girl Wants.mp3',damage: 80}, {name:'./Your Body.mp3',damage: 40}, {name:'./Genie In A Bottle.mp3', damage: 60}]
 		},
 		{name: "Justin Boober", x: 80, dialog: "I swear, I don't do drugs.", health: 260, initiative: '.7',
 		songs: [{name:"./Boyfriend.mp3", damage: 75}, {name: "./Baby.mp3", damage: 50},{name:"./As Long As You Love Me.mp3",damage: 35}]
 		},
 		{name: "'N Stink", x: 420, dialog: "You'll have no strings attached when we're done!", health: 350, initiative: '1.2',
-		songs: ["./Digital.mp3","./nostrings.mp3","./Bye Bye Bye.mp3"]
+		songs: [{name: "./Digital.mp3", damage: 40}, {name:"./nostrings.mp3", damage: 30}, {name:"./Bye Bye Bye.mp3", damage: 100}]
 		}
 	],
 	currBadguy: 0,
@@ -249,11 +249,22 @@ var board = {
 		console.log(row,col);
 		console.log(room);
 		this.ctx.fillStyle = "#000";
+		if (row == 1 && col == 1){
+			this.ctx.globalAlpha = .7;
+			var creep = new Image();
+			creep.src = "images/milkyeway.jpeg";
+			var that = this;
+			creep.onload = function(){
+				that.ctx.drawImage(creep, 0, 0,600,600,0,0,600,600);
+			}
+			console.log("center");
+		}
 
 		for (var i = 0; i < room.wall.length; i++){
 			var w = room.wall[i];
 			this.ctx.fillRect(w.x,w.y,w.width,w.height);
 		}
+
 	},
 	initRooms: function(player) {
 		for (var i = 0; i < 3; i++){
@@ -335,8 +346,32 @@ var board = {
 		$(atk).appendTo(document.body);
 		atk.play();
 		player.health -= stats.songs[rand_song].damage;
-		if (player.health < 0)
+
+		var dmgdisplay = document.createElement('span');
+		$(dmgdisplay).addClass("damage").
+		css({
+				position: 'absolute',
+				top: '500px',
+				"z-index": '1000',
+				color: '#313131',
+				background: '#f9f9f9',
+				display: 'block',
+				border: '1px solid #ccc',
+				height: '100px',
+				"line-height": '100px',
+				"text-align": 'center',
+				right: '100px'
+		})
+		.text(stats.name + " retaliated. You took " + stats.songs[rand_song].damage + "damage...").appendTo($("#game-wrap")).hide().fadeIn("slow").delay(2000).fadeOut("slow", function() {
+
+			$(this).remove();
+
+		});
+		if (player.health < 0){
 			alert("you've lost the game, so sorry");
+			document.location.reload(true);
+		}
+
 
 	}
 };
@@ -373,13 +408,27 @@ $(document).ready(function() {
 
 		var audios = document.getElementsByTagName("audio");
 		var index = $(this).attr("data-power");
+		for (var i = 0; i < audios.length; i++)
+			audios[i].pause();
+				
 		audios[index].play();
-		audios[index].pause();
 		var dmg  = player.powers[index].attack;
 		board.badGuys[board.currBadguy].health -= dmg;
 		board.enemyAttack(board.badGuys[board.currBadguy]);
 		var dmgdisplay = document.createElement('span');
-		$(dmgdisplay).attr("class","damage").text(dmg).appendTo($("#game-wrap")).hide().fadeIn("slow").delay(2000).fadeOut("slow", function() {
+		$(dmgdisplay).addClass("damage").css({
+				position: 'absolute',
+				top: '200px',
+				"z-index": '1000',
+				color: '#313131',
+				background: '#f9f9f9',
+				display: 'block',
+				border: '1px solid #ccc',
+				height: '100px',
+				"line-height": '100px',
+				"text-align": 'center',
+				left: '200px'
+		}).text("You dealt " + dmg + " damage!").appendTo($("#game-wrap")).hide().fadeIn("slow").delay(2000).fadeOut("slow", function() {
 
 			$(this).remove();
 
@@ -389,8 +438,8 @@ $(document).ready(function() {
 			board.clear();
 			board.currBadguy++;
 			board.ctx.drawImage(board.sprite,player.spriteFrontX,player.spriteFrontY,board.sd,board.sd,player.currX,player.currY,board.sd,board.sd);
-			board.battleState = false;
 			board.drawRoom(player.currBlock.row, player.currBlock.col);
+			board.battleState = false;
 			$("#game-wrap").find('.ui-battle').hide();
 		}
 	});

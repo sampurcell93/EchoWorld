@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../Users/sampurcell/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Users/spurce02/.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -149,10 +149,17 @@ h2 {
   font-size: 1.2em;
   list-style: none;
   display: block;
-  border-top: 1px solid #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+/* line 82, ../sass/screen.scss */
+.ui-battle li:hover, .ui-dialog li:hover {
+  background: #fcfcfc;
+  color: #000;
+  text-decoration: underline;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .ui-battle:after {
   content: "POWERS";
   position: absolute;
@@ -163,13 +170,25 @@ h2 {
   text-align: center;
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 #game-wrap {
   display: none;
   position: relative;
 }
+/* line 111, ../sass/screen.scss */
+#game-wrap ul {
+  z-index: 2000;
+  position: absolute;
+  left: 250px;
+  background: #fff;
+}
+/* line 117, ../sass/screen.scss */
+#game-wrap ul li {
+  display: inline-block;
+  padding: 10px;
+}
 
-/* line 101, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 #entry-box {
   position: fixed;
   width: 600px;
@@ -183,12 +202,11 @@ h2 {
   -moz-animation: bounce 1.4s alternate infinite;
   animation: bounce 1.4s alternate infinite;
   overflow: hidden;
-  display: none;
   display: block;
   padding: 30px 10px;
   background: url("../images/accent.png") 0px 10px repeat-x, url("../images/accent.png") 0px 98% repeat-x white;
 }
-/* line 120, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 #entry-box input {
   display: block;
   width: 90%;
@@ -210,12 +228,12 @@ h2 {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 135, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #entry-box input:focus {
   border-color: #aaa;
 }
 
-/* line 141, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 p {
   line-height: 1.8;
   padding: 18px;
@@ -223,7 +241,7 @@ p {
   font-family: sans-serif;
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 button {
   display: block;
   width: 50%;
@@ -261,34 +279,47 @@ button {
   font-size: 1.6em;
   text-shadow: 0px 1px 0px #e1e1e1;
 }
-/* line 173, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 button:hover {
   background: #C1965D;
 }
 
-/* line 180, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 .attack {
   cursor: pointer;
 }
 
-/* line 182, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 #add-name {
   overflow: hidden;
 }
 
-/* line 185, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 #add-songs {
   display: none;
 }
 
-/* line 187, ../sass/screen.scss */
-.damage {
+/* line 208, ../sass/screen.scss */
+span.damage {
   position: absolute;
-  top: 100px;
-  left: 100px;
+  top: 200px;
+  z-index: 1000;
+  color: #fff;
+  display: block;
+  border: 1px solid #ccc;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  left: 200px;
 }
 
-/* line 194, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 canvas {
   border: 1px solid #ccc;
   border-top-color: #f9f9f9;
@@ -302,13 +333,13 @@ canvas {
   position: relative;
 }
 
-/* line 205, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 #powers {
   display: block;
   margin: 10px auto;
   width: 90%;
 }
-/* line 211, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 #powers li {
   font-family: sans-serif;
   display: block;
@@ -321,48 +352,48 @@ canvas {
 }
 
 @-webkit-keyframes bounce {
-  /* line 226, ../sass/screen.scss */
+  /* line 256, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 230, ../sass/screen.scss */
+  /* line 260, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @-moz-keyframes bounce {
-  /* line 237, ../sass/screen.scss */
+  /* line 267, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 241, ../sass/screen.scss */
+  /* line 271, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @-o-keyframes bounce {
-  /* line 247, ../sass/screen.scss */
+  /* line 277, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 251, ../sass/screen.scss */
+  /* line 281, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @keyframes bounce {
-  /* line 257, ../sass/screen.scss */
+  /* line 287, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 261, ../sass/screen.scss */
+  /* line 291, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }

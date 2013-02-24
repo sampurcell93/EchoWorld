@@ -29,16 +29,23 @@
             is a 2-dimensional action-adventure game based on the EchoNest API. As a 
             player, your goal is to save the world by using your songs to defeat the foul
             musicia- ahem, monsters, that inhabit it. Your success will depend on the songs you choose
-            as your powers. Yoiur first song is your theme song, and it defines your character.</p>
+            as your powers. Your first song is your theme song, and it defines your character.</p>
 
           <input id="songupload" style='display: none;' type="file" name="files[]" data-url="fupload/server/php/" multiple>
-          <button id='upload'>Upload a Song</button>
+          <button id='upload'>Upload Songs</button>
           <ul id="powers">
           </ul>
           <button id='finalize' class='hidden'>Go forth, child of Cthulu</button>
         </div>
       </div>
       <div id='game-wrap'>
+        <ul id='personality'>
+          <li>Hp: 145</li>
+          <li>Type: Sassy Rapper</li>
+          <li>Defense: Self-deprecation</li>
+          <li>Genre: Hip Hop</li>
+        </ul>
+        
         <h1>Music Marauder</h1>
   	    <canvas id='echoWorld' width='600' height='600'><canvas>
       </div>
