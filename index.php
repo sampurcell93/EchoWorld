@@ -6,27 +6,14 @@
     <link href='http://fonts.googleapis.com/css?family=Quintessential|Open+Sans' rel='stylesheet' type='text/css'>
 		<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <script src="jquery.min.js"></script>
-    <script type="text/javascript" src='echo.js'></script>
     <script src="fupload/js/vendor/jquery.ui.widget.js"></script>
     <script src="fupload/js/jquery.iframe-transport.js"></script>
     <script src="fupload/js/jquery.fileupload.js"></script>
+    <!--<script type="text/javascript" src='echonest_js/dependencies.js'></script>-->
+    <script type="text/javascript" src='echonest_js/echo.js'></script>
+    <script type="text/javascript" src='echonest_js/fupload.js'></script>
   </head>
   <body>
-    <script>
-      $(function () {
-          $('#songupload').fileupload({
-              dataType: 'json',
-              done: function (e, data) {
-                  $.each(data.result, function (index, file) {
-                      var n = Math.round(Math.random() * 3) + 1;
-                      console.log(n);
-                      var titles = ["chosen one", "the boy who lived", "dickface", "Cesar"];
-                      $('<li/>').text(file.name + "... power created, " + titles[n] + ".").appendTo($("#powers"));
-                  });
-              }
-          });
-      });
-    </script>
       <div id='entry-box'>  
         <div id='add-name'>
           <p>Brave adventurer and purveyor of music, you come to us in dark times. 

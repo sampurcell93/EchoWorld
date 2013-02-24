@@ -178,6 +178,9 @@ button {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 2px #cccccc;
+  -moz-box-shadow: 0px 1px 2px #cccccc;
+  box-shadow: 0px 1px 2px #cccccc;
   margin: 10px auto;
   border: 1px solid #aaa;
   border-top-color: #ccc;
@@ -204,22 +207,22 @@ button {
   font-size: 1.6em;
   text-shadow: 0px 1px 0px #e1e1e1;
 }
-/* line 127, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 button:hover {
   background: #C1965D;
 }
 
-/* line 134, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 #add-name {
   overflow: hidden;
 }
 
-/* line 137, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 #add-songs {
   display: none;
 }
 
-/* line 139, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 canvas {
   width: 600px;
   height: 600px;
@@ -235,13 +238,13 @@ canvas {
   opacity: 0.99;
 }
 
-/* line 151, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 #powers {
   display: block;
   margin: 10px auto;
   width: 90%;
 }
-/* line 157, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #powers li {
   font-family: sans-serif;
   display: block;
@@ -254,48 +257,48 @@ canvas {
 }
 
 @-webkit-keyframes bounce {
-  /* line 172, ../sass/screen.scss */
+  /* line 173, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 176, ../sass/screen.scss */
+  /* line 177, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @-moz-keyframes bounce {
-  /* line 183, ../sass/screen.scss */
+  /* line 184, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 187, ../sass/screen.scss */
+  /* line 188, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @-o-keyframes bounce {
-  /* line 193, ../sass/screen.scss */
+  /* line 194, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 197, ../sass/screen.scss */
+  /* line 198, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @keyframes bounce {
-  /* line 203, ../sass/screen.scss */
+  /* line 204, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 207, ../sass/screen.scss */
+  /* line 208, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }

@@ -30,17 +30,7 @@ var player = {
 
 $(document).ready(function() {
 	var name;
-	var songs = [
-		{
-			duration: "145",
-			energy: "high",
-			loudness: 102,
-	  		genre: "hip-hop",
-	  		tempo: "fast",
-	  		name: "Roma roma",
-	  		danceability: "Club"
-		}
-	];
+	var songs = [];
 	$("button#next").on("click", function() { 
 		name = $("#name").val();
 		if (name != ""){
@@ -57,3 +47,5 @@ $(document).ready(function() {
 
 
 });
+
+
