@@ -1,17 +1,16 @@
+/*testing function*/
 function run(){
 	jsonGenres = get_genres();
 	genresObj = JSON.parse(jsonGenres);
+	console.log(genresObj);
 	for(var i = 0; i < genresObj.response.genres.length; i++){
-		artstsJsonForGenre = request_artists(genresObj.response.genres["name"]);
+		artstsJsonForGenre = request_artists(genresObj.response.genres[i]["name"]);
+		artists = JSON.parse(artstsJsonForGenre);
+		for(var j = 0; j < artists.response.artists.length; j++){
+			console.log(artists.response.artists[j]["name"]);	
+		}	
 	}
-	//console.log(genresObj.response.genres[1]["name"]);
-	/*for(var i = 0; i < genresObj.length; i++){
-		artistJSON = request_artists(genresObj[0].name);
-	}*/	
-	//artObj = JSON.parse(artistJSON);
-	/*for(var i = 0; i < artObj.length; i++){
-		console.log(artObj[i]["name"]);
-	}*/
+
 }
 
 /*Returns JSON object with all genres*/
