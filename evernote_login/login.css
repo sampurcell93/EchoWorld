@@ -1,0 +1,35 @@
+html, body{
+	height:100%;
+	width:100%;
+	background-color:white;
+	color:white;
+}
+
+#login{
+	padding:1px 0 0 10px;
+	opacity: .25;
+	background: url('evhead.jpg')  no-repeat left top;
+	background-size: 100%;
+	background-color: #F9F9F9;
+	font-size: 2em;
+	margin:0 auto;
+	clear:both;
+	height:200px;
+	width:50%;
+	text-align: center;
+	font-family: Open-Sans;
+	border-radius: 15px;
+	position:absolute;
+	top:-200px;
+	right:300px;
+}
+
+#l_form{
+	margin-top:10%;
+	color:gray;
+	text-align: left;
+}
+
+#close{
+	float:right;
+}
