@@ -10,6 +10,8 @@
     <script src="fupload/js/vendor/jquery.ui.widget.js"></script>
     <script src="fupload/js/jquery.iframe-transport.js"></script>
     <script src="fupload/js/jquery.fileupload.js"></script>
+    <script src="engine_js/enchant.js"></script>
+    <script src="engine_js/game.js"></script>
   </head>
   <body>
     <script>
