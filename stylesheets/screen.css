@@ -79,7 +79,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 16, ../sass/screen.scss */
 body {
   font-size: 14px;
-  background: url("../subtle/black-linen.png");
+  background: url("../images/black-linen.png");
   padding-bottom: 50px;
 }
 
@@ -89,7 +89,7 @@ h1 {
   text-align: center;
   font-size: 5em;
   margin: 20px auto -20px;
-  background: url("../scroll.png") no-repeat;
+  background: url("../images/scroll.png") no-repeat;
   width: 800px;
   height: 179px;
   line-height: 165px;
@@ -102,7 +102,7 @@ h1:after, h1:before {
   position: absolute;
   top: 160px;
   display: block;
-  background: url("../pillar.png") no-repeat;
+  background: url("../images/pillar.png") no-repeat;
   width: 100px;
   height: 600px;
 }
@@ -121,15 +121,20 @@ h1:after {
 #entry-box {
   position: fixed;
   width: 600px;
-  height: 300px;
+  min-height: 300px;
   left: 50%;
   top: 50%;
   margin-top: -150px;
   margin-left: -300px;
   background: #fff;
   -webkit-animation: bounce 1.4s alternate infinite;
+  -moz-animation: bounce 1.4s alternate infinite;
+  animation: bounce 1.4s alternate infinite;
+  overflow: hidden;
+  padding: 30px 10px;
+  background: url("../images/accent.png") 0px 10px repeat-x, url("../images/accent.png") 0px 98% repeat-x white;
 }
-/* line 70, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 #entry-box input {
   display: block;
   width: 90%;
@@ -151,12 +156,12 @@ h1:after {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 85, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 #entry-box input:focus {
-  border-color: #bbb;
+  border-color: #aaa;
 }
 
-/* line 91, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 p {
   line-height: 1.8;
   padding: 18px;
@@ -164,7 +169,7 @@ p {
   font-family: sans-serif;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 button {
   display: block;
   width: 50%;
@@ -199,12 +204,22 @@ button {
   font-size: 1.6em;
   text-shadow: 0px 1px 0px #e1e1e1;
 }
-/* line 122, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 button:hover {
   background: #C1965D;
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
+#add-name {
+  overflow: hidden;
+}
+
+/* line 137, ../sass/screen.scss */
+#add-songs {
+  display: none;
+}
+
+/* line 139, ../sass/screen.scss */
 canvas {
   width: 600px;
   height: 600px;
@@ -219,58 +234,68 @@ canvas {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=99);
   opacity: 0.99;
 }
-/* line 141, ../sass/screen.scss */
-canvas:after {
-  content: "hrth";
-  position: absolute;
-  top: 100px;
-  left: 100px;
+
+/* line 151, ../sass/screen.scss */
+#powers {
   display: block;
+  margin: 10px auto;
+  width: 90%;
+}
+/* line 157, ../sass/screen.scss */
+#powers li {
+  font-family: sans-serif;
+  display: block;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  border-top: 1px solid #f2f2f2;
+  padding: 7px;
+  background: #f9f9f9;
 }
 
 @-webkit-keyframes bounce {
-  /* line 153, ../sass/screen.scss */
+  /* line 172, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 157, ../sass/screen.scss */
+  /* line 176, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @-moz-keyframes bounce {
-  /* line 164, ../sass/screen.scss */
+  /* line 183, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 168, ../sass/screen.scss */
+  /* line 187, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @-o-keyframes bounce {
-  /* line 174, ../sass/screen.scss */
+  /* line 193, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 178, ../sass/screen.scss */
+  /* line 197, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }
 }
 
 @keyframes bounce {
-  /* line 184, ../sass/screen.scss */
+  /* line 203, ../sass/screen.scss */
   from {
     margin-top: -150px;
   }
 
-  /* line 188, ../sass/screen.scss */
+  /* line 207, ../sass/screen.scss */
   to {
     margin-top: -130px;
   }

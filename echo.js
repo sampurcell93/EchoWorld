@@ -1,7 +1,8 @@
 var player = {
-	powers: null,
+	powers: [],
 	init: function(songs, name) { 
 		player.name = name;
+		console.log(name);
 		var power;
 		for (var i = 0; i < songs.length; i++){
 			var song = songs[i];
@@ -17,36 +18,42 @@ var player = {
 			power = {};
 			power.name = song.name;
 			power.attack = song.danceability;
+			power.type = song.genre;
 		}
 	},
 	getWeakness: function(genre) {
 
-		switch(genre) {
-
-
-
-
-		}
+		return "coldplay";
 
 	}
 };
 
 $(document).ready(function() {
-
-	var songs = [];
-	$("button").on("click", function() { 
-		var name = $("#name").val();
+	var name;
+	var songs = [
+		{
+			duration: "145",
+			energy: "high",
+			loudness: 102,
+	  		genre: "hip-hop",
+	  		tempo: "fast",
+	  		name: "Roma roma",
+	  		danceability: "Club"
+		}
+	];
+	$("button#next").on("click", function() { 
+		name = $("#name").val();
 		if (name != ""){
-			player.init(songs,name);
+			console.log("here");
+			$("#add-name").animate({width:"hide"});
+			$("#add-songs").animate({width:"show"});
 			
 		}
 	});
+	$("button#upload").on("click", function() { 
+		player.init(songs,name);
+		$("#songupload").trigger("click");
+	});
+
+
 });
-
-/*$("#entry-box").fadeOut("slow",function() { 
-
-				$("#game-wrap").fadeIn("fast");
-
-			});
-
-			*/
